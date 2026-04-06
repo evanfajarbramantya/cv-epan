@@ -9,57 +9,57 @@
             --primary-color: #2c3e50;
             --accent-color: #3498db;
             --text-color: #333;
-            --bg-color: #f0f2f5;
-            --sidebar-width: 300px;
+            --bg-color: #f4f7f6;
+            --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
+        /* Container Utama */
         .cv-container {
-            max-width: 950px;
+            max-width: 900px;
             margin: 0 auto;
-            background: #fff;
+            background: var(--white);
             display: flex;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            flex-wrap: wrap; /* Penting untuk responsivitas */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             border-radius: 12px;
             overflow: hidden;
         }
 
         /* Sidebar Kiri */
         .sidebar {
-            width: var(--sidebar-width);
+            flex: 1 1 300px; /* Lebar dasar 300px, bisa melar */
             background-color: var(--primary-color);
             color: #fff;
             padding: 40px 30px;
-            flex-shrink: 0;
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
-            margin: 0 auto 25px;
-            border: 5px solid var(--accent-color);
+            margin: 0 auto 20px;
+            border: 4px solid var(--accent-color);
             background: #ecf0f1;
-            transition: transform 0.3s ease;
         }
 
         .sidebar h2 {
-            font-size: 1.1em;
+            font-size: 1.2em;
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 8px;
             margin-bottom: 20px;
-            margin-top: 35px;
+            margin-top: 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -72,149 +72,109 @@
             gap: 10px;
         }
 
-        .skill-container {
-            margin-bottom: 18px;
-        }
-
-        .skill-label {
-            font-size: 0.85em;
-            display: block;
-            margin-bottom: 5px;
-        }
-
+        .skill-container { margin-bottom: 15px; }
+        .skill-label { font-size: 0.85em; display: block; margin-bottom: 5px; }
         .skill-bar {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.2);
             height: 8px;
             border-radius: 10px;
-            overflow: hidden;
         }
-
         .skill-per {
             background: var(--accent-color);
             height: 100%;
             border-radius: 10px;
-            transition: width 1s ease-in-out;
         }
 
         /* Konten Kanan */
         .main-content {
-            padding: 50px;
-            flex-grow: 1;
+            flex: 2 1 500px; /* Lebih lebar dari sidebar */
+            padding: 40px;
+            background: var(--white);
         }
 
-        .header-title h1 {
-            font-size: 2.8em;
-            color: var(--primary-color);
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
+        .header-title { border-bottom: 2px solid #eee; margin-bottom: 30px; padding-bottom: 20px; }
+        .header-title h1 { font-size: 2.2em; color: var(--primary-color); }
+        .header-title p { color: var(--accent-color); font-weight: 600; font-size: 1.1em; }
 
-        .header-title p {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 1.15em;
-            margin-bottom: 40px;
-        }
-
-        .section {
-            margin-bottom: 35px;
-        }
-
+        .section { margin-bottom: 30px; }
         .section-title {
             color: var(--primary-color);
-            font-size: 1.3em;
-            border-left: 6px solid var(--accent-color);
+            font-size: 1.2em;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             font-weight: 700;
         }
 
-        .exp-item {
-            margin-bottom: 25px;
-        }
+        .exp-item { margin-bottom: 20px; }
+        .exp-item h3 { font-size: 1.1em; color: #333; }
+        .exp-date { font-size: 0.85em; color: #888; font-style: italic; }
 
-        .exp-item h3 {
-            font-size: 1.2em;
-            color: #2c3e50;
-            margin-bottom: 3px;
-        }
-
-        .exp-date {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
+        ul { padding-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 5px; }
 
         .game-link {
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 10px;
             color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
-            padding: 5px 12px;
+            padding: 8px 15px;
             border: 1px solid var(--accent-color);
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            border-radius: 5px;
+            transition: 0.3s;
         }
-
         .game-link:hover {
             background: var(--accent-color);
             color: #fff;
         }
 
+        /* Tombol Cetak */
         .btn-print {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 12px 25px;
-            background: var(--accent-color);
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 50px;
+            border-radius: 30px;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-            z-index: 1000;
-            transition: transform 0.2s;
+            z-index: 100;
         }
 
-        .btn-print:hover { transform: scale(1.05); }
+        /* Media Query untuk HP */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .sidebar, .main-content { padding: 30px 20px; }
+            .header-title h1 { font-size: 1.8em; }
+            .cv-container { border-radius: 0; }
+        }
 
+        /* Aturan Cetak */
         @media print {
             .btn-print { display: none; }
             body { padding: 0; background: #fff; }
             .cv-container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
         }
-
-        @media (max-width: 768px) {
-            .cv-container { flex-direction: column; }
-            .sidebar { width: 100%; }
-        }
     </style>
 </head>
 <body>
 
-    <button class="btn-print" onclick="window.print()">Simpan PDF / Cetak</button>
+    <button class="btn-print" onclick="window.print()">Cetak / Simpan PDF</button>
 
     <div class="cv-container">
-        <div class="sidebar">
+        <aside class="sidebar">
             <img src="epani.jpeg" alt="Foto Evan Fajar" class="profile-img">
             
             <h2>Kontak</h2>
-            <div class="contact-item"><span>📞</span> 0857-2183-0439</div>
-            <div class="contact-item"><span>📧</span> evanfajar@email.com</div>
-            <div class="contact-item"><span>📍</span> Bantul, Yogyakarta</div>
-            <div class="contact-item"><span>🔗</span> linkedin.com/in/evanfajar</div>
+            <div class="contact-item">📞 0857-2183-0439</div>
+            <div class="contact-item">📧 evanfajar@email.com</div>
+            <div class="contact-item">📍 Bantul, Yogyakarta</div>
+            <div class="contact-item">🔗 linkedin.com/in/evanfajar</div>
 
             <h2>Keahlian</h2>
             <div class="skill-container">
@@ -233,40 +193,40 @@
             <h2>Bahasa</h2>
             <p style="font-size: 0.9em; margin-bottom: 5px;">Indonesia (Native)</p>
             <p style="font-size: 0.9em;">Inggris (Pasif)</p>
-        </div>
+        </aside>
 
-        <div class="main-content">
+        <main class="main-content">
             <header class="header-title">
                 <h1>Evan Fajar B.</h1>
-                <p>Siswa SMK N 1 SANDEN | Rekayasa Perangkat Lunak</p>
+                <p>Siswa SMK N 1 SANDEN | Jurusan RPL</p>
             </header>
 
             <section class="section">
-                <div class="section-title">Profil Profesional</div>
-                <p>Saya adalah siswa kelas XI Jurusan Rekayasa Perangkat Lunak yang disiplin, berdedikasi tinggi, dan memiliki antusiasme besar dalam pengembangan perangkat lunak. Mampu bekerja secara mandiri maupun dalam tim untuk menyelesaikan tantangan teknis.</p>
+                <div class="section-title">Profil</div>
+                <p>Siswa kelas XI Jurusan Rekayasa Perangkat Lunak yang disiplin, berdedikasi tinggi, dan antusias dalam pengembangan perangkat lunak. Mampu bekerja sama dalam tim untuk menyelesaikan tantangan teknis.</p>
             </section>
 
             <section class="section">
                 <div class="section-title">Pendidikan</div>
                 <div class="exp-item">
                     <h3>SMK Negeri 1 Sanden</h3>
-                    <div class="exp-date">2024 - Sekarang</div>
-                    <p>Fokus pada Konsentrasi Keahlian: Rekayasa Perangkat Lunak (RPL)</p>
+                    <span class="exp-date">2024 - Sekarang</span>
+                    <p>Rekayasa Perangkat Lunak (RPL)</p>
                 </div>
             </section>
 
             <section class="section">
-                <div class="section-title">Proyek & Pengalaman</div>
+                <div class="section-title">Proyek</div>
                 <div class="exp-item">
-                    <h3>Game Development: "Dukun Edan"</h3>
-                    <p>Mengembangkan logika permainan interaktif menggunakan platform <strong>Scratch</strong> sebagai bagian dari proyek akhir semester.</p>
-                    <a href="https://wonderful-pie-b39dba.netlify.app/" target="_blank" class="game-link">Mainkan Game 🎮</a>
+                    <h3>Game: "Dukun Edan"</h3>
+                    <p>Membangun logika game interaktif menggunakan Scratch.</p>
+                    <a href="https://wonderful-pie-b39dba.netlify.app/" target="_blank" class="game-link">Lihat Game 🎮</a>
                 </div>
                 <div class="exp-item">
                     <h3>Web & Database</h3>
                     <ul>
-                        <li>Manajemen basis data relasional menggunakan <strong>SQL (MariaDB)</strong> dan lingkungan <strong>XAMPP</strong>.</li>
-                        <li>Implementasi antarmuka web menggunakan struktur <strong>HTML5, CSS3</strong>, dan logika dasar <strong>PHP</strong>.</li>
+                        <li>Pengelolaan data dengan SQL (MariaDB).</li>
+                        <li>Development web dasar (HTML, CSS, PHP).</li>
                     </ul>
                 </div>
             </section>
@@ -275,12 +235,11 @@
                 <div class="section-title">Minat Kerja</div>
                 <ul>
                     <li>Junior Web Developer</li>
-                    <li>Database Administrator Assistant</li>
-                    <li>Software Quality Assurance</li>
-                    <li>Creative Digital Media</li>
+                    <li>Database Assistant</li>
+                    <li>Creative Media</li>
                 </ul>
             </section>
-        </div>
+        </main>
     </div>
 
 </body>
